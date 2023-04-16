@@ -63,7 +63,7 @@ conda env create -f environment.yaml
 &emsp;&emsp;以第2节中的运行参数为例，一开始 CMTF 的输出如下图所示。CMTF 会首先输出用户设定的模型结构、数据集和输出结果的存储路径。然后，进行一次模型验证，最后进入 epochs 迭代训练。
 ![运行输出实例](./md_figs/运行输出截图.png)
 &emsp;&emsp;训练完成后，在 save/resnet20 文件夹下会生成 tb_log 文件夹以及 resnet20_best.pth.tar、resnet20_checkpoint.pth.tar、curve.png、log_training_resnet20_xxxx.txt。tb_log 是 tensorboardX 可用的文件夹， **resnet20_best.pth.tar、resnet20_checkpoint.pth.tar 分别是存储的训练完成后的检查点和训练过程中的最优检查点**，log_training_resnet20_xxxx.txt 记录了程序输出，curve.png 是训练曲线图，如下图所示。
-![训练曲线](./md_figs/../save/resnet20/curve.png)
+![训练曲线](./md_figs/curve.png)
 &emsp;&emsp;训练曲线图表明训练性能大约在第80个 epoch 和第120个 epoch 大幅提升，这是由于学习率参数 lr 在这两个 epoch 时进行了缩减：
 ```python
 if epoch in [args.epochs*0.5, args.epochs*0.75]:
